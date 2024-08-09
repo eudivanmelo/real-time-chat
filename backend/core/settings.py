@@ -16,11 +16,17 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*'] # TODO Remove this in production
 
+CURRENT_URL = '"https://8000-idx-real-time-chat-1723200672279.cluster-duylic2g3fbzerqpzxxbw6helm.cloudworkstations.dev"' # TODO Remove this in production
+
 # CORS Settings
 CORS_ALLOWED_ORIGINS = [
     #"http://localhost:3000", TODO Configure this in production
 ]
 CORS_ALLOW_ALL_ORIGINS = True # TODO Remove this in production
+
+CSRF_TRUSTED_ORIGINS = [ # TODO Remove this in production
+    CURRENT_URL,
+]
 
 # Application definition
 
@@ -37,6 +43,9 @@ INSTALLED_APPS = [
     
     # Cors app
     'corsheaders',
+    
+    # Apps
+    'apps.accounts',
 ]
 
 MIDDLEWARE = [
@@ -115,6 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'accounts.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
