@@ -1,4 +1,5 @@
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,11 +14,13 @@ SECRET_KEY = 'django-insecure-x!bpjr4lip5ct18+s$nt!&p2_@rc9-#-n9wyfx*+j!kp7q!l%2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*'] # TODO Remove this in production
 
+# CORS Settings
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
+    #"http://localhost:3000", TODO Configure this in production
 ]
+CORS_ALLOW_ALL_ORIGINS = True # TODO Remove this in production
 
 # Application definition
 
@@ -31,9 +34,13 @@ INSTALLED_APPS = [
     
     # Rest framework app
     'rest_framework',
+    
+    # Cors app
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -42,6 +49,21 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# Rest Framework settings
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+}
+
+# Simple JWT Settings
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=7),
+}
 
 ROOT_URLCONF = 'core.urls'
 
