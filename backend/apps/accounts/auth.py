@@ -1,4 +1,4 @@
-from accounts.models import User
+from .models import User
 from django.contrib.auth.hashers import check_password, make_password
 
 class Authentication:
