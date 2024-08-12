@@ -1,5 +1,5 @@
-from attachments.models import FileAttachment
-from attachments.utils import Formatter
+from apps.attachments.models import FileAttachment
+from apps.attachments.utils import Formatter
 
 from rest_framework import serializers
 

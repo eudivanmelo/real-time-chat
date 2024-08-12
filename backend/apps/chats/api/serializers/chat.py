@@ -1,12 +1,12 @@
 from rest_framework import serializers
 
 from apps.accounts.api.serializers import UserSerializer
-from chats.models import Chat, ChatMessage
 
-from attachments.models import FileAttachment, AudioAttachment
-from attachments.api.serializers import FileAttachmentSerializer, AudioAttachmentSerializer
+from apps.chats.models import Chat, ChatMessage
+from apps.chats.api.serializers.chatmessage import ChatMessageSerializer
 
-from .chatmessage import ChatMessageSerializer
+from apps.attachments.models import FileAttachment, AudioAttachment
+from apps.attachments.api.serializers import FileAttachmentSerializer, AudioAttachmentSerializer
 
 class ChatSerializer(serializers.ModelSerializer):
     user = serializers.SerializerMethodField()
