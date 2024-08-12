@@ -1,4 +1,4 @@
-from attachments.models import AudioAttachment
+from apps.attachments.models import AudioAttachment
 
 from rest_framework import serializers
 
