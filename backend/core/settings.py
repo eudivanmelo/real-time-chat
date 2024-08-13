@@ -16,7 +16,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*'] # TODO Remove this in production
 
-CURRENT_URL = '"https://8000-idx-real-time-chat-1723200672279.cluster-duylic2g3fbzerqpzxxbw6helm.cloudworkstations.dev"' # TODO Remove this in production
+CURRENT_URL = 'https://8000-idx-real-time-chat-1723200672279.cluster-duylic2g3fbzerqpzxxbw6helm.cloudworkstations.dev' # TODO Remove this in production
 
 # CORS Settings
 CORS_ALLOWED_ORIGINS = [
