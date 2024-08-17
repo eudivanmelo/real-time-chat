@@ -1,5 +1,5 @@
-# Frontend
-## Chat em Tempo Real com Django e Next.js
+# Chat em Tempo Real com Django e Next.js
+## Frontend
 
 ### Pacotes Utilizados
 
