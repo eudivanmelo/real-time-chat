@@ -1,36 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend
+## Chat em Tempo Real com Django e Next.js
 
-## Getting Started
+### Pacotes Utilizados
 
-First, run the development server:
+Este projeto utiliza uma variedade de pacotes para otimizar e melhorar a experiência de desenvolvimento e a funcionalidade da aplicação. Aqui estão alguns dos principais pacotes utilizados:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Next.js**: Framework principal para o front-end, que permite a criação de páginas React com renderização do lado do servidor.
+- **React** e **React DOM**: Bibliotecas fundamentais para construção da interface do usuário de forma eficiente e modular.
+- **Socket.io Client**: Essencial para implementar a comunicação em tempo real entre o front-end e o back-end, possibilitando atualizações instantâneas do chat.
+- **Axios**: Utilizado para realizar requisições HTTP de forma simplificada, facilitando a comunicação com o back-end.
+- **TailwindCSS** e **TailwindCSS Animate**: Ferramentas poderosas para estilização, permitindo a criação de interfaces responsivas e visualmente atraentes com utilitários de classe.
+- **Radix UI**: Conjunto de componentes acessíveis e personalizáveis, como Avatar, Menu Dropdown e Toast, utilizados para melhorar a usabilidade da interface.
+- **Zod**: Biblioteca para validação e verificação de tipos, garantindo que os dados manipulados no front-end sejam válidos e seguros.
+- **Zustand**: Usado para gerenciamento de estado simplificado no React, facilitando o controle dos estados globais da aplicação.
+- **Day.js**: Pequena biblioteca para manipulação de datas, essencial para lidar com timestamps no chat.
+- **NProgress**: Implementado para exibir uma barra de progresso durante a navegação entre páginas, melhorando a experiência do usuário.
+- **TypeScript**: Utilizado para adicionar tipagem estática ao projeto, aumentando a segurança e previsibilidade do código.
+- **ESLint**: Ferramenta de linting configurada para manter a qualidade e consistência do código durante o desenvolvimento.
