@@ -1,6 +1,6 @@
-"user server"
+"use server"
 
-import { SignInData, SingUpData } from "@/lib/schemas/authSchema"
+import { SignInData, SignUpData } from "@/lib/schemas/authSchema"
 import { signIn, signUp } from "@/lib/requests"
 import { cookies } from "next/headers"
 import { User } from "@/types/user"
@@ -21,7 +21,7 @@ export const handleSignIn = async (data: SignInData) => {
     return response
 }
 
-export const handleSignUp = async (data: SingUpData) => {
+export const handleSignUp = async (data: SignUpData) => {
     const response = await signUp(data)
 
     if (response.data){
@@ -39,7 +39,7 @@ export const handleSignUp = async (data: SingUpData) => {
 export const handleGetUser = async () => {
     const authCookie = cookies().get(process.env.NEXT_PUBLIC_AUTH_KEY as string)?.value
 
-    const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/v1/accounts/me', {
+    const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/v1/accounts/user/', {
         headers: {
             Authorization: `Bearer ${authCookie}`,
         }

@@ -21,4 +21,4 @@ export const signUpSchema = z.object({
                .max(80, {message: 'Senha deve ter no máximo 80 caracteres'}),
 })
 
-export type SingUpData = z.infer<typeof signUpSchema>
+export type SignUpData = z.infer<typeof signUpSchema>
