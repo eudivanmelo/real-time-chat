@@ -138,7 +138,7 @@ export const AccountPage = () => {
                                         name="password" 
                                         render={({field}) => (
                                             <FormItem>
-                                                <FormLabel>Sua senha</FormLabel>
+                                                <FormLabel>Sua Senha</FormLabel>
                                                 <FormControl>
                                                     <Input type="password" placeholder="Ex: 123456" {...field} />
                                                 </FormControl>
