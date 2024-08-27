@@ -74,7 +74,7 @@ const config = {
       },
       height: {
         header: "var(--header-height)",
-        app: "var(--app-height"
+        app: "var(--app-height)"
       }
     },
   },

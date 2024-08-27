@@ -26,7 +26,11 @@ CORS_ALLOW_ALL_ORIGINS = True # TODO Remove this in production
 
 CSRF_TRUSTED_ORIGINS = [ # TODO Remove this in production
     CURRENT_URL,
+    "http://0.0.0.0:3000",
+    "https://3000-idx-real-time-chat-1723200672279.cluster-duylic2g3fbzerqpzxxbw6helm.cloudworkstations.dev"
 ]
+
+# APPEND_SLASH = False
 
 # Application definition
 

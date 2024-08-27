@@ -6,40 +6,41 @@ import axios, { AxiosError } from "axios";
 
 type Props = {
     endpoint: string,
-    method?: "GET" | "POST" | "PUT" | "DELETE",
+    method?: 'GET' | 'POST' | 'PUT' | 'DELETE',
     data?: object,
-    withAuth?: boolean
+    withAuth?: boolean,
     withAttachment?: boolean
 }
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL + '/api/v1'
+const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL + '/api/v1'
 
 export const api = async <TypeResponse>({
     endpoint,
-    method = "GET",
+    method = 'GET',
     data,
     withAuth = true,
     withAttachment = false
 }: Props) => {
     const instance = axios.create({
-        baseURL: BASE_URL,
-    });
+        baseURL: BASE_URL
+    })
 
     if (withAuth) {
         /* Getting auth cookie */
-        const sessionAuth = cookies().get(process.env.NEXT_PUBLIC_AUTH_KEY as string);
+        const sessionAuth = cookies().get(process.env.NEXT_PUBLIC_AUTH_KEY as string)
+
         if (sessionAuth?.value) {
-            instance.defaults.headers.common["Authorization"] = `Bearer ${sessionAuth.value}`;
+            instance.defaults.headers.common['Authorization'] = `Bearer ${sessionAuth.value}`
         }
     }
 
     if (withAttachment) {
-        instance.defaults.headers.common["Content-Type"] = "multipart/form-data";
+        instance.defaults.headers.common['Content-Type'] = 'multipart/form-data'
     }
 
-    try{
+    try {
         const request = await instance<TypeResponse>(endpoint, {
-            method, 
+            method,
             params: method == 'GET' && data,
             data: method != 'GET' && data
         })
@@ -47,7 +48,7 @@ export const api = async <TypeResponse>({
         return {
             data: request.data
         }
-    } catch (error){
+    } catch (error) {
         const e = error as AxiosError<APIError>
 
         return {

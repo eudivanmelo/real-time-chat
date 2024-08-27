@@ -6,6 +6,6 @@ export type User = {
     last_access: string
 }
 
-export type APIUpdateUSer = {
+export type APIUpdateUser = {
     user: User
 }
