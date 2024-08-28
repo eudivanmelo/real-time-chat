@@ -3,7 +3,9 @@
 import { useChatStore } from "@/stores/chatStore";
 import { Chat } from "../chat";
 import Image from "next/image";
-import HomeSectionBG from "@/assets/home-section-bg.png"
+import HomeSectionBG from "@/assets/home-section-bg.svg"
+import { Button } from "../ui/button";
+import { Lock } from "lucide-react";
 
 export const HomePage = () => {
     const { chat, setShowNewChat } = useChatStore()
@@ -26,6 +28,18 @@ export const HomePage = () => {
                             Por favor, selecione uma conversa para visualizar as
                             mensagens ou inicie uma nova conversa.
                         </p>
+
+                        <Button
+                            className="rounded-full"
+                            onClick={() => setShowNewChat(true)}
+                        >
+                            Nova conversa
+                        </Button>
+                    </div>
+
+                    <div className="flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
+                        <Lock className="size-4" strokeWidth={3} />
+                        Suas mensagens pessoais são protegidas com criptografia de ponta a ponta.
                     </div>
                 </div>
             }
