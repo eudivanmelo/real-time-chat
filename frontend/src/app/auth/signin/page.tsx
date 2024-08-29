@@ -1,7 +1,7 @@
 import { SignInPage } from "@/components/pages/signin";
 import { Metadata } from "next";
 
-export const metada: Metadata = {
+export const metadata: Metadata = {
     title: "Logar-se"
 }
 
